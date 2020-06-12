@@ -1,5 +1,4 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These two functions compute the inverse of a matrix.
 
 ## This function can create a matrix that cache its inverse.
 
@@ -29,4 +28,16 @@ cacheSolve <- function(x, ...) {
         inver <- solve(dat)
         x$setinv(inver)
         inver
+}
+test <- function() 
+{
+        matri <- makeCacheMatrix(matrix(3:18, nrow=4, ncol=4))
+        matri$get()
+        matri$getinv()
+        cacheSolve(matri)
+        matri$set(matrix(1:16, nrow=4, ncol=4)) 
+        cacheSolve(matri)  
+        matri$get()         
+        matri$getinv()     
+        matri$get() %*% matri$getinverse() 
 }
