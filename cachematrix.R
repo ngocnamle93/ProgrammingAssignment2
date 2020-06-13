@@ -1,5 +1,4 @@
 ## These two equations compute the matrix's inverse.
-
 ## This function can create a matrix that cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
